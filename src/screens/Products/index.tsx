@@ -13,7 +13,7 @@ import { EmptyData } from "../../components/EmptyData";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { ProductCard } from "../../components/ProductCard";
-
+import Constants from "expo-constants";
 type ProductsScreenNavigationProp = NativeStackNavigationProp<
   TRootStackParamList,
   "Products"
@@ -36,7 +36,7 @@ export const ProductsPage = () => {
   return (
     <View style={styles.container}>
       {products.length === 0 ? (
-        <EmptyData message="No hay productos" />
+        <EmptyData message={"No hay productos"} />
       ) : (
         <FlatList
           onScroll={onScroll}

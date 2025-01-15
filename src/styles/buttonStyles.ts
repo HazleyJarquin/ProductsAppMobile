@@ -11,7 +11,7 @@ export const buttonStyles = StyleSheet.create({
     backgroundColor: "#03dac6",
   },
   secondaryText: {
-    color: "#000", // Texto negro
+    color: "#000",
   },
   danger: {
     backgroundColor: "#b00020",

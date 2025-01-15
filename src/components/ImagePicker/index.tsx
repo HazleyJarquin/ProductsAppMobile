@@ -10,6 +10,7 @@ import {
 import * as ImagePickerExpo from "expo-image-picker";
 import { useProductStore } from "../../store/useProductsStore";
 
+import Constants from "expo-constants";
 interface Props {
   sendImage: (image: string) => void;
   watchImage?: string;
@@ -20,6 +21,8 @@ export const ImagePicker = ({ sendImage, watchImage }: Props) => {
   const [image, setImage] = useState<string | null>(
     isEditing ? watchImage ?? null : null
   );
+
+  const apiKey = Constants.expoConfig?.extra?.apiKey;
 
   const pickImage = async () => {
     let result = await ImagePickerExpo.launchImageLibraryAsync({
@@ -37,8 +40,7 @@ export const ImagePicker = ({ sendImage, watchImage }: Props) => {
   };
 
   const uploadImage = async (uri: string) => {
-    const apiUrl =
-      "https://api.imgbb.com/1/upload?key=36fb9361b19ff23d5bf3b8269f9de50a";
+    const apiUrl = `https://api.imgbb.com/1/upload?key=${apiKey}`;
     const formData = new FormData();
 
     const uriParts = uri.split(".");

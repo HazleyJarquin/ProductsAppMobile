@@ -4,6 +4,9 @@
     "slug": "products-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "extra": {
+      "apiKey": "36fb9361b19ff23d5bf3b8269f9de50a"
+    },
     "plugins": [
       [
         "expo-image-picker",
